@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/*========= レイアウトのためのCSS ===============*/
+
+.wrapper {
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bgextend,
+.lineTrigger {
+    width: 220px;
+    padding: 20px;
+    margin: 0 20px 20px 0;
+    box-sizing: border-box;
+}
+
+/* smooth */
+.smooth {
+    animation-name: smoothAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform-origin: left;
+    opacity: 0;
+}
+
+@keyframes smoothAnime {
+    from {
+        transform: translate3d(0, 100%, 0) skewY(12deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0) skewY(0);
+        opacity: 1;
+    }
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+
+.smoothTrigger {
+    opacity: 0;
+}
